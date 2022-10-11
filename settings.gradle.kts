@@ -7,7 +7,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Smonkey_Android"
-include ':ui'
-include ':data'
-include ':domain'
-include ':di'
+include (":ui")
+include (":data")
+include (":domain")
+include (":di")
