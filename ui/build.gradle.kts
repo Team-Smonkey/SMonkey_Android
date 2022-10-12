@@ -40,22 +40,13 @@ dependencies {
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.material)
 
-    implementation(Dependencies.UI.Compose.composeActivity)
-    implementation(Dependencies.UI.Compose.composeMaterial)
-    implementation(Dependencies.UI.Compose.composePreView)
-    implementation(Dependencies.UI.Compose.composeTest)
-    implementation(Dependencies.UI.Compose.composeUi)
-    implementation(Dependencies.UI.Compose.composeUiTool)
-    implementation(Dependencies.UI.Compose.composeActivity)
-    implementation(Dependencies.UI.Compose.composeNav)
-    implementation(Dependencies.UI.Compose.composeAniNav)
-    implementation(Dependencies.UI.Compose.accompanistIconController)
-    implementation(Dependencies.UI.Compose.accompanistPager)
-    implementation(Dependencies.UI.Compose.composeConstraint)
-    implementation(Dependencies.UI.Compose.composeMaterialIcon)
+
 
     implementation(Dependencies.DI.hiltAndroid)
     implementation(Dependencies.DI.hiltCompose)
+    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation("com.google.android.material:material:1.4.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     kapt(Dependencies.DI.hiltCompiler)
 
     implementation(Dependencies.DI.inject)
@@ -71,8 +62,11 @@ dependencies {
     implementation(Dependencies.Coroutine.core)
     implementation(Dependencies.Coroutine.android)
 
-    implementation(Dependencies.UI.ViewModel.viewModel)
-    implementation(Dependencies.UI.ViewModel.liveData)
+    implementation(Dependencies.UI.constraintLayout)
+    implementation(Dependencies.UI.material)
+
+    implementation(Dependencies.ViewModel.viewModel)
+    implementation(Dependencies.ViewModel.liveData)
 
     implementation(Dependencies.Lifecycle.viewModel)
     implementation(Dependencies.Lifecycle.liveData)

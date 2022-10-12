@@ -6,32 +6,15 @@ object Dependencies {
     const val material = "com.google.android.material:material:${Versions.material}"
 
     object UI {
-        object Compose {
-            const val composeUi = "androidx.compose.ui:ui:${Versions.jetpackCompose}"
-            const val composeMaterial = "androidx.compose.material:material:${Versions.jetpackCompose}"
-            const val composePreView = "androidx.compose.ui:ui-tooling-preview:${Versions.jetpackCompose}"
-            const val composeActivity =
-                "androidx.activity:activity-compose:${Versions.activityCompose}"
-            const val composeTest = "androidx.compose.ui:ui-test-junit4:${Versions.jetpackCompose}"
-            const val composeUiTool = "androidx.compose.ui:ui-tooling:${Versions.jetpackCompose}"
+        const val material = "com.google.android.material:material:${Versions.material}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    }
 
-            const val composeNav = "androidx.navigation:navigation-compose:${Versions.nav}"
-            const val composeAniNav =
-                "com.google.accompanist:accompanist-navigation-animation:${Versions.aniNav}"
-            const val accompanistPager =
-                "com.google.accompanist:accompanist-pager:${Versions.accompanistPager}"
-            const val accompanistIconController =
-                "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanistIconController}"
-            const val composeConstraint =
-                "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraint}"
-            const val composeMaterialIcon =
-                "androidx.compose.material:material-icons-extended:${Versions.jetpackCompose}"
-        }
-
-        object ViewModel {
-            const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
-            const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
-        }
+    object ViewModel {
+        const val viewModel =
+            "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModel}"
+        const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     }
 
     object WorkManager {
