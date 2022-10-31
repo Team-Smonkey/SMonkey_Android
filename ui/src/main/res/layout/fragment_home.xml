@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.example.smonkey_android.feature.main.MainFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/tv_mainTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="SMONKEY"
+                android:textColor="#000000"
+                android:textSize="22dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:text="유현명"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_mainTitle" />
+
+            <TextView
+                android:id="@+id/tv_smonkeyLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="금연 1단계"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_maintain_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:text="다음 금연 단계까지 D-19"
+                android:textSize="11dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_smonkeyLevel" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/tv_maintain_date"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F2F3F5"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            android:layout_marginTop="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/first_cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="425dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginTop="-20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.dinuscxj.progressbar.CircleProgressBar
+                            android:id="@+id/pb"
+                            android:layout_width="225dp"
+                            android:layout_height="225dp"
+                            android:layout_marginTop="35dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="19dp"
+                            android:fontFamily="@font/noto_sans_kr_medium"
+                            android:text="쿼카년"
+                            android:textColor="#343434"
+                            android:textSize="18dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/pb" />
+
+                        <Button
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/buttondesign2"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:gravity="center"
+                            android:text="오늘 하루 성공"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent" />
+
+                        <Button
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="26dp"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/buttondesign3"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:text="오늘 하루 실패"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/second_cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginTop="11dp"
+                    app:layout_constraintTop_toBottomOf="@id/first_cardview">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_nonSmokingTimeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="금연 기간"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="28dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_nonSmokingTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9일 12시간 20분"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="4dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_nonSmokingTimeTitle"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_saveMoneyTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="절약한 금액"
+                            android:textSize="15dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="14dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_nonSmokingTime"/>
+
+                        <TextView
+                            android:id="@+id/tv_saveMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="36000원"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/noto_sans_kr_regular"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="6dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_saveMoneyTitle"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/third_cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginTop="11dp"
+                    app:layout_constraintTop_toBottomOf="@id/second_cardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_SmokingTimeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="흡연 기간"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="28dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_SmokingTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="29일 12시간 20분"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="4dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_SmokingTimeTitle"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_buyMoneyTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="사용한 금액"
+                            android:textSize="15dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="14dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_SmokingTime"/>
+
+                        <TextView
+                            android:id="@+id/tv_buyMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="362000원"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/noto_sans_kr_regular"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="6dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_buyMoneyTitle"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/four_cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginTop="11dp"
+                    app:layout_constraintTop_toBottomOf="@id/third_cardView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_todayCommentTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="오늘의 한마디"
+                            android:textSize="15dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginTop="22dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tv_todayComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="정말 순간의 선택으로 당신의 평생을 후회하게 만드시곘습니까?"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/noto_sans_kr_regular"
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="22dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_todayCommentTitle"/>
+
+                        <TextView
+                            android:id="@+id/tv_todayCommentWriter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="- 유현명"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/noto_sans_kr_regular"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginTop="14dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_todayComment"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="#F2F3F5"
+                    app:layout_constraintTop_toBottomOf="@id/four_cardView"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
