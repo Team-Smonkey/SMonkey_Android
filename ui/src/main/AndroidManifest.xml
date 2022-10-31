@@ -8,22 +8,53 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Smonkey_Android">
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".LoginActivity"
-            android:exported="false">
+            android:name=".feature.promise.PromiseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".feature.login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".feature.register.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".feature.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".feature.home.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 
