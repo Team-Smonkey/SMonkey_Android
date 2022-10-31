@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.smonkey_android.feature.main.MainFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/navigation_calender"
+        android:name="com.example.smonkey_android.feature.calender.CalenderFragment"
+        android:label="달력"
+        tools:layout="@layout/fragment_calender" />
+
+    <fragment
+        android:id="@+id/navigation_community"
+        android:name="com.example.smonkey_android.feature.community.CommunityFragment"
+        android:label="커뮤니티"
+        tools:layout="@layout/fragment_community" />
+
+    <fragment
+        android:id="@+id/navigation_friend"
+        android:name="com.example.smonkey_android.feature.friend.FriendFragment"
+        android:label="친구"
+        tools:layout="@layout/fragment_friend" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.smonkey_android.feature.setting.SettingFragment"
+        android:label="설정"
+        tools:layout="@layout/fragment_setting" />
+
+</navigation>
