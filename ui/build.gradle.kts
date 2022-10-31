@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     id ("com.android.application")
     id ("kotlin-android")
@@ -28,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = ("1.8")
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -42,8 +47,14 @@ dependencies {
 
     implementation(Dependencies.DI.hiltAndroid)
     implementation(Dependencies.DI.hiltCompose)
+
     kapt(Dependencies.DI.hiltCompiler)
     implementation(Dependencies.DI.inject)
+
+    implementation(Dependencies.Navigation.navigationUi)
+    implementation(Dependencies.Navigation.navigationFragment)
+
+    implementation(Dependencies.CircleImageView.circleImage)
 
     implementation(Dependencies.Network.retrofit)
     implementation(Dependencies.Network.gsonConverter)
@@ -65,4 +76,6 @@ dependencies {
     implementation(Dependencies.Lifecycle.viewModel)
     implementation(Dependencies.Lifecycle.liveData)
     implementation(Dependencies.Lifecycle.runTime)
+
+    implementation ("com.dinuscxj:circleprogressbar:1.3.6")
 }
