@@ -17,9 +17,19 @@ object Dependencies {
         const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     }
 
+    object Navigation {
+        const val navigationFragment =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+        const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    }
+
     object WorkManager {
         const val ktx = "androidx.work:work-runtime-ktx:${Versions.workManager}"
         const val hiltExtension = "androidx.hilt:hilt-work:${Versions.workManagerHiltExtension}"
+    }
+
+    object CircleImageView {
+        const val circleImage = "de.hdodenhof:circleimageview:${Versions.circleImage}"
     }
 
     object Moshi {
