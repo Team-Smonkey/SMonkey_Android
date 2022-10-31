@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/navigation_calender"
+        android:icon="@drawable/calender"
+        android:title="달력" />
+
+    <item
+        android:id="@+id/navigation_community"
+        android:icon="@drawable/ic_community"
+        android:title="커뮤니티" />
+
+    <item
+        android:id="@+id/navigation_friend"
+        android:icon="@drawable/ic_friend"
+        android:title="친구" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/img"
+        android:title="설정" />
+</menu>
