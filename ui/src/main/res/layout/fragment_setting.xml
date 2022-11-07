@@ -1,13 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
         <variable
             name="fragment"
             type="com.example.smonkey_android.feature.setting.SettingFragment" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설정"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/myProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 프로필"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="32dp"/>
+
+        <ImageButton
+            android:id="@+id/moveMyProfile"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/myProfile"
+            app:layout_constraintBottom_toBottomOf="@id/myProfile"
+            android:layout_marginRight="23dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nextnext"/>
+
+        <TextView
+            android:id="@+id/updatesmoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="금연 정보 수정"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/myProfile"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="32dp"/>
+
+        <ImageButton
+            android:id="@+id/moveupdatesmoke"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/updatesmoke"
+            app:layout_constraintBottom_toBottomOf="@id/updatesmoke"
+            android:layout_marginRight="23dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nextnext"/>
+
+        <TextView
+            android:id="@+id/updatesmonkey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="스몽키 색깔 변경"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/updatesmoke"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="32dp"/>
+
+        <ImageButton
+            android:id="@+id/moveupdateSmonkey"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/updatesmonkey"
+            app:layout_constraintBottom_toBottomOf="@id/updatesmonkey"
+            android:layout_marginRight="23dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nextnext"/>
+
+        <TextView
+            android:id="@+id/idedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 변경"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/updatesmonkey"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="32dp"/>
+
+        <ImageButton
+            android:id="@+id/moveeditid"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/idedit"
+            app:layout_constraintBottom_toBottomOf="@id/idedit"
+            android:layout_marginRight="23dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nextnext"/>
+
+        <TextView
+            android:id="@+id/pwedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 변경"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/idedit"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="32dp"/>
+
+        <ImageButton
+            android:id="@+id/moveeditpw"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pwedit"
+            app:layout_constraintBottom_toBottomOf="@id/pwedit"
+            android:layout_marginRight="23dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/nextnext"/>
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:textColor="#FF0000"
+            android:textSize="17dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/pwedit"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="32dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
