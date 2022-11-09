@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -20,62 +21,69 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="28dp"
+                android:src="@drawable/awef"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
             <TextView
                 android:id="@+id/tv_mainTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="SMONKEY"
-                android:textColor="#000000"
-                android:textSize="22dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="7dp"
-                android:fontFamily="@font/noto_sans_kr_regular"
-                android:text="유현명"
-                android:textColor="@color/black"
-                android:textSize="13dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_mainTitle" />
-
-            <TextView
-                android:id="@+id/tv_smonkeyLevel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:text="금연 1단계"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_maintain_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="15dp"
                 android:fontFamily="@font/noto_sans_kr_medium"
-                android:text="다음 금연 단계까지 D-19"
-                android:textSize="11dp"
+                android:text="유현명"
+                android:layout_marginTop="5dp"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                app:layout_constraintLeft_toRightOf="@id/profileImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/levelInformation"
+                android:layout_width="100dp"
+                android:layout_height="34dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/informationdesing"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_smonkeyLevel" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivInformation"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/information"
+                    android:layout_marginLeft="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="단계 정보"
+                    android:textSize="11dp"
+                    android:fontFamily="@font/noto_sans_kr_regular"
+                    app:layout_constraintLeft_toRightOf="@id/ivInformation"
+                    android:layout_marginLeft="9dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/tv_maintain_date"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/levelInformation"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -98,7 +106,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/first_cardview"
                     android:layout_width="match_parent"
-                    android:layout_height="425dp"
+                    android:layout_height="470dp"
                     app:cardBackgroundColor="#FFFFFF"
                     app:cardCornerRadius="16dp"
                     android:layout_marginTop="-20dp"
@@ -110,53 +118,111 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.dinuscxj.progressbar.CircleProgressBar
-                            android:id="@+id/pb"
-                            android:layout_width="225dp"
-                            android:layout_height="225dp"
+                        <ImageView
+                            android:id="@+id/smonkey"
+                            android:layout_width="180dp"
+                            android:layout_height="180dp"
                             android:layout_marginTop="32dp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@drawable/monkey"/>
 
                         <TextView
-                            android:id="@+id/tv_name"
+                            android:id="@+id/tvNonSmokingLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:fontFamily="@font/noto_sans_kr_medium"
-                            android:text="쿼카년"
-                            android:textColor="#343434"
+                            android:text="금연 1단계"
                             android:textSize="18dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginTop="10dp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/pb" />
+                            app:layout_constraintTop_toBottomOf="@id/smonkey"/>
+                        
+                        <TextView
+                            android:id="@+id/remainNextLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="다음 단계까지 2일 12시간"
+                            android:textSize="13dp"
+                            android:textColor="#878787"
+                            android:fontFamily="@font/noto_sans_kr_medium"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNonSmokingLevel"/>
+
+                        <TextView
+                            android:id="@+id/tv_smonkeyname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="망나뇽"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginLeft="28dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/remainNextLevel"/>
+
+                        <TextView
+                            android:id="@+id/smonkeylevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lv_11"
+                            android:textSize="12dp"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/tv_smonkeyname"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="28dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="40dp"
+                            android:text="76/100"
+                            android:textSize="12dp"
+                            android:textColor="#939393"
+                            android:fontFamily="@font/noto_sans_kr_medium"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tv_smonkeyname"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_smonkeyname" />
+
+                        <ProgressBar
+                            android:id="@+id/progress"
+                            android:layout_width="0dp"
+                            android:layout_height="15dp"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:progress="7"
+                            android:max="10"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="34dp"
+                            android:progressBackgroundTint="#EAEAEA"
+                            android:progressTint="#935735"
+                            app:layout_constraintLeft_toRightOf="@id/smonkeylevel"
+                            app:layout_constraintTop_toTopOf="@id/smonkeylevel"
+                            app:layout_constraintBottom_toBottomOf="@id/smonkeylevel"
+                            app:layout_constraintRight_toRightOf="parent"/>
 
                         <Button
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="26dp"
-                            android:layout_marginBottom="30dp"
-                            android:background="@drawable/buttondesign2"
-                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:layout_marginHorizontal="30dp"
+                            android:backgroundTint="#B77E5E"
+                            android:background="@drawable/buttonlogin"
+                            android:fontFamily="@font/noto_sans_kr_medium"
                             android:gravity="center"
-                            android:text="오늘 하루 성공"
+                            android:text="금연 기록하기"
                             android:textColor="@color/white"
+                            android:layout_marginBottom="28dp"
+                            android:paddingTop="3dp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent" />
-
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginRight="26dp"
-                            android:layout_marginBottom="30dp"
-                            android:background="@drawable/buttondesign3"
-                            android:fontFamily="@font/noto_sans_kr_bold"
-                            android:text="오늘 하루 실패"
-                            android:gravity="center"
-                            android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintRight_toRightOf="parent" />
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
