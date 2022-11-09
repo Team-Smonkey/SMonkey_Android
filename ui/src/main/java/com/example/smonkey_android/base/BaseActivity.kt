@@ -1,6 +1,7 @@
 package com.example.smonkey_android.base
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity

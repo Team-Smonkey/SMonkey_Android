@@ -26,5 +26,9 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(
             binding.view3.visibility = View.INVISIBLE
             binding.view4.visibility = View.VISIBLE
         }
+
+        binding.btBack.setOnClickListener {
+            finish()
+        }
     }
 }
