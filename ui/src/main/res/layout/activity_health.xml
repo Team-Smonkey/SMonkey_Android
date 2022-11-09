@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="activity"
             type="com.example.smonkey_android.feature.health.HealthActivity" />
@@ -14,5 +15,188 @@
         android:layout_height="match_parent"
         tools:context=".feature.health.HealthActivity">
 
+        <ImageButton
+            android:id="@+id/bt_back"
+            android:layout_width="28dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="흡연 정보"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_back" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/edittext"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/View"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:text="평균 하루 흡연 개비"
+            android:textColor="#858585"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/view1"
+            app:layout_constraintTop_toTopOf="@id/view1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="15dp"
+            android:background="#F1F1F1"
+            android:hint="숫자만 입력"
+            android:textColorHint="#4E4E4E"
+            android:textColor="@color/black"
+            android:maxLength="2"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@id/view1"
+            app:layout_constraintLeft_toLeftOf="@id/view1" />
+
+        <View
+            android:id="@+id/View"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/edittext"
+            app:layout_constraintLeft_toLeftOf="@id/View"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:text="한갑 당 내 담배 가격"
+            android:textColor="#858585"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/view2"
+            app:layout_constraintTop_toTopOf="@id/view2" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="15dp"
+            android:background="#F1F1F1"
+            android:hint="숫자만 입력"
+            android:textColorHint="#4E4E4E"
+            android:textColor="@color/black"
+            android:maxLength="5"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@id/view2"
+            app:layout_constraintLeft_toLeftOf="@id/view2" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:text="흡연 시작일"
+            android:textColor="#858585"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/view3"
+            app:layout_constraintTop_toTopOf="@id/view3" />
+
+        <TextView
+            android:id="@+id/tvSmokingDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="15dp"
+            android:background="#F1F1F1"
+            android:textSize="16dp"
+            android:text="정확히 몰라도 대략적으로 알려주세요!"
+            android:textColor="#4E4E4E"
+            app:layout_constraintBottom_toBottomOf="@id/view3"
+            app:layout_constraintLeft_toLeftOf="@id/view3" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="#CECECE"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="12dp"
+            app:layout_constraintTop_toBottomOf="@id/view3"/>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:text="금연 시작일"
+            android:textColor="#858585"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/view4"
+            app:layout_constraintTop_toTopOf="@id/view4" />
+
+        <TextView
+            android:id="@+id/tv_nonSmokingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="15dp"
+            android:background="#F1F1F1"
+            android:textSize="16dp"
+            android:text="정확히 몰라도 대략적으로 알려주세요!"
+            android:textColor="#4E4E4E"
+            app:layout_constraintBottom_toBottomOf="@id/view4"
+            app:layout_constraintLeft_toLeftOf="@id/view4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
