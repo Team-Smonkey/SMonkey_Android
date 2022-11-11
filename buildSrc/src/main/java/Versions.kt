@@ -22,6 +22,13 @@ object Versions {
     const val moshi = "1.12.0"
     const val constraintLayout = "2.1.2"
     const val circleImage = "3.1.0"
-
+    const val koinVersion = "3.2.2"
     const val navigation = "2.3.5"
+    const val rxAndroid = "3.0.0"
+    const val rxJava = "3.0.3"
+    const val rxJava2 = "2.9.0"
+    const val rxJava3 = "2.9.0"
+    const val rxKotlin = "2.4.0"
+    const val rxDogTag = "2.0.1"
+    const val rxBinding = "4.0.0"
 }

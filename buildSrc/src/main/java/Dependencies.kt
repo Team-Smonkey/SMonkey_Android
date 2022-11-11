@@ -38,16 +38,25 @@ object Dependencies {
         const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:${Versions.moshiKotlin}"
     }
 
-    object Coroutine {
-        const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
-        const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
+    object RxJava {
+        const val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroid}"
+
+        const val rxJava = "io.reactivex.rxjava3:rxjava:${Versions.rxJava}"
+        const val rxJava3 = "com.squareup.retrofit2:adapter-rxjava3:${Versions.rxJava3}"
+
+        const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxKotlin}"
+
+        const val rxJava2 = "com.squareup.retrofit2:adapter-rxjava2:${Versions.rxJava2}"
+        const val rxDogTag = "com.uber.rxdogtag2:rxdogtag:${Versions.rxDogTag}"
+        const val rxBinding = "com.jakewharton.rxbinding4:rxbinding-material:${Versions.rxBinding}"
     }
 
     object DI {
-        const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
-        const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
-        const val inject = "javax.inject:javax.inject:1"
-        const val hiltCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
+        const val koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}"
+        const val koinScope = "io.insert-koin:koin-androidx-scope:2.1.6"
+        const val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
+        const val koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koinVersion}"
+        const val koinTest = "io.insert-koin:koin-test:${Versions.koinVersion}"
     }
 
     object Network {
