@@ -35,18 +35,21 @@ dependencies {
     implementation("androidx.room:room-common:2.4.3")
     kapt(Dependencies.Moshi.moshiCompiler)
 
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
     implementation(Dependencies.Network.gsonConverter)
     implementation(Dependencies.Network.loggingInterceptor)
     implementation(Dependencies.Network.retrofit)
     implementation(Dependencies.Network.okhttp)
 
-    implementation(Dependencies.Coroutine.core)
-
-    implementation(Dependencies.DI.inject)
-
-    implementation(Dependencies.DI.hiltAndroid)
-    kapt(Dependencies.DI.hiltCompiler)
+    implementation(Dependencies.RxJava.rxAndroid)
+    implementation(Dependencies.RxJava.rxJava)
+    implementation(Dependencies.RxJava.rxJava2)
+    implementation(Dependencies.RxJava.rxJava3)
+    implementation(Dependencies.RxJava.rxBinding)
+    implementation(Dependencies.RxJava.rxKotlin)
+    implementation(Dependencies.RxJava.rxDogTag)
 
     implementation(Dependencies.WorkManager.ktx)
     implementation(Dependencies.WorkManager.hiltExtension)

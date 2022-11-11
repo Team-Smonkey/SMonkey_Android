@@ -31,4 +31,8 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
 
+    implementation(Dependencies.DI.koin)
+    implementation(Dependencies.DI.koinCore)
+    implementation(Dependencies.DI.koinScope)
+    implementation(Dependencies.DI.koinTest)
 }

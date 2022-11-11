@@ -45,14 +45,9 @@ dependencies {
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.material)
 
-    implementation(Dependencies.DI.hiltAndroid)
-    implementation(Dependencies.DI.hiltCompose)
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-
-    kapt(Dependencies.DI.hiltCompiler)
-    implementation(Dependencies.DI.inject)
 
     implementation(Dependencies.Navigation.navigationUi)
     implementation(Dependencies.Navigation.navigationFragment)
@@ -67,8 +62,9 @@ dependencies {
     implementation(Dependencies.WorkManager.ktx)
     implementation(Dependencies.WorkManager.hiltExtension)
 
-    implementation(Dependencies.Coroutine.core)
-    implementation(Dependencies.Coroutine.android)
+    implementation(Dependencies.RxJava.rxJava2)
+    implementation(Dependencies.RxJava.rxAndroid)
+
 
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.material)

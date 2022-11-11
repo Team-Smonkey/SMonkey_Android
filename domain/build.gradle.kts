@@ -29,7 +29,6 @@ android {
 
 dependencies {
 
-    implementation(Dependencies.Coroutine.core)
-
-    implementation(Dependencies.DI.inject)
+    implementation(Dependencies.RxJava.rxJava2)
+    implementation(Dependencies.RxJava.rxAndroid)
 }
