@@ -16,16 +16,16 @@ interface SMonkeyApi {
     @POST(SMonkeyUrl.SMonkey)
     fun makeSMonkey(
         @Body makeSMonkeyRequest: MakeSMonkeyRequest
-    ): Completable
+    ): Single<Completable>
 
     @POST(SMonkeyUrl.SMonkeies.SMonkeyColor)
     fun alterSMonkeyColor(
+        @Header ("Authorization") accessToken: String,
         @Body color: String,
-    ): Completable
+    ): Single<Completable>
 
     @GET(SMonkeyUrl.SMonkeies.searchSMonkey)
     fun searchSMonkey(
         @Header("Authorization") accessToken: String,
-        @Path("user-id") userId: Int,
     ): Single<SearchSMonkeyResponse>
 }

@@ -5,7 +5,7 @@ import com.example.data.remote.request.community.UpdateCommunityRequest
 import com.example.data.remote.response.community.FetchCommunityDetailResponse
 import com.example.data.remote.response.community.FetchCommunityResponse
 import com.example.data.remote.url.SMonkeyUrl
-import com.example.domain.enum.CategoryType
+import com.example.data.domain.enums.CategoryType
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -22,19 +22,19 @@ interface CommunityApi {
     @POST(SMonkeyUrl.Community)
     fun createCommunity(
         @Body createCommunityRequest: CreateCommunityRequest
-    ): Completable
+    ): Single<Completable>
 
     @DELETE(SMonkeyUrl.Community)
     fun deleteCommunity(
         @Header("Authorization") accessToken: String,
         @Body id: Int,
-    ): Completable
+    ): Single<Completable>
 
     @PATCH(SMonkeyUrl.Community)
     fun updateCommunity(
         @Header("Authorization") accessToken: String,
         @Body updateCommunityRequest: UpdateCommunityRequest,
-    ): Completable
+    ): Single<Completable>
 
     @GET(SMonkeyUrl.Community)
     fun fetchCommunity(
@@ -46,17 +46,17 @@ interface CommunityApi {
     fun fetchCommunityDetail(
         @Header("Authorization") accessToken: String,
         @Path("feed-id") feedId: UUID,
-    ): FetchCommunityDetailResponse
+    ): Single<FetchCommunityDetailResponse>
 
     @POST(SMonkeyUrl.Communities.CommunityLike)
     fun feedLike(
         @Header("Authorization") accessToken: String,
         @Path("feed-id") feedId: UUID,
-    ): Completable
+    ): Single<Completable>
 
     @DELETE(SMonkeyUrl.Communities.CommunityLike)
     fun feedUnLike(
         @Header("Authorization") accessToken: String,
         @Path("feed-id") feedId: UUID,
-    ): Completable
+    ): Single<Completable>
 }
