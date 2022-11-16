@@ -12,7 +12,7 @@ import io.reactivex.disposables.CompositeDisposable
 class FetchCommunityUseCase(
     private val communityDataSource: RemoteCommunityDataSource,
     disposable: CompositeDisposable
-) : UseCase<CategoryType, FetchCommunityResponse>(disposable) {
-    override fun buildUseCase(data: CategoryType): Single<FetchCommunityResponse> =
+) : UseCase<CategoryType, List<FetchCommunityResponse>>(disposable) {
+    override fun buildUseCase(data: CategoryType): Single<List<FetchCommunityResponse>> =
         communityDataSource.fetchCommunity(data)
 }
