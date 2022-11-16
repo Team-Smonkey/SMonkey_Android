@@ -1,29 +1,33 @@
 package com.example.data.remote.response.community
 
+import com.example.data.domain.enums.CategoryType
 import com.google.gson.annotations.SerializedName
 
 data class FetchCommunityResponse(
-    @SerializedName("writer") val writer: Writer,
-    @SerializedName("feed") val feed: Feed,
+    @SerializedName("content") val content: Content,
 ) {
-
-    data class Writer(
-        @SerializedName("name") val name: String,
-        @SerializedName("smonkey") val sMonkey: SMonkey,
+    data class Content(
+        @SerializedName("feed_list") val feedList: List<FeedList>
     ) {
-        data class SMonkey(
-            @SerializedName("name") val sMonkeyName: String,
-            @SerializedName("image_url") val imageUrl: String,
-        )
+        data class FeedList(
+            @SerializedName("writer") val writer: Writer,
+            @SerializedName("feed_id") val feedId: Int,
+            @SerializedName("title") val title: String,
+            @SerializedName("like_count") val likeCount: Int,
+            @SerializedName("is_like") val isLike: Boolean,
+            @SerializedName("content") val content: String,
+            @SerializedName("category") val categoryType: CategoryType,
+            @SerializedName("create_at") val createAt: String,
+        ) {
+            data class Writer(
+                @SerializedName("user_name") val userName: String,
+                @SerializedName("smonkey_name") val sMonkeyName: String,
+                @SerializedName("background_color") val backgroundColor: String,
+                @SerializedName("step") val step: Int,
+                @SerializedName("point") val point: Int,
+                @SerializedName("level") val level: Int,
+                @SerializedName("next_point") val nextPoint: Int,
+            )
+        }
     }
-
-    data class Feed(
-        @SerializedName("feed_id") val feedId: Int,
-        @SerializedName("title") val title: String,
-        @SerializedName("content") val content: String,
-        @SerializedName("createAt") val createAt: String,
-        @SerializedName("like") val like: Int,
-        @SerializedName("isLike") val isLike: Boolean,
-        @SerializedName("comment") val comment: Int,
-    )
 }
