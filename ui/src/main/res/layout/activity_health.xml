@@ -198,5 +198,21 @@
             android:textColor="#4E4E4E"
             app:layout_constraintBottom_toBottomOf="@id/view4"
             app:layout_constraintLeft_toLeftOf="@id/view4" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_complete"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="완료"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:backgroundTint="#935735"
+            android:background="@drawable/buttonlogin"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
