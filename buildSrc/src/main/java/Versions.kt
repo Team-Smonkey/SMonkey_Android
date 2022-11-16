@@ -22,7 +22,7 @@ object Versions {
     const val moshi = "1.12.0"
     const val constraintLayout = "2.1.2"
     const val circleImage = "3.1.0"
-    const val koinVersion = "3.2.2"
+    const val koinVersion = "2.1.6"
     const val navigation = "2.3.5"
     const val rxAndroid = "3.0.0"
     const val rxJava = "3.0.3"

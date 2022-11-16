@@ -52,11 +52,11 @@ object Dependencies {
     }
 
     object DI {
-        const val koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}"
-        const val koinScope = "io.insert-koin:koin-androidx-scope:2.1.6"
-        const val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
-        const val koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koinVersion}"
-        const val koinTest = "io.insert-koin:koin-test:${Versions.koinVersion}"
+        const val koinCore = "org.koin:koin-core:${Versions.koinVersion}"
+        const val koinScope = "org.koin:koin-androidx-scope:2.1.6"
+        const val koin = "org.koin:koin-android:${Versions.koinVersion}"
+        const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koinVersion}"
+        const val koinTest = "org.koin:koin-test:${Versions.koinVersion}"
     }
 
     object Network {
