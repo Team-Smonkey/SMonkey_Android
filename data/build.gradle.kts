@@ -29,7 +29,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
 
     implementation(Dependencies.Moshi.moshi)
     implementation("androidx.room:room-common:2.4.3")
