@@ -37,7 +37,7 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
@@ -62,9 +62,14 @@ dependencies {
     implementation(Dependencies.WorkManager.ktx)
     implementation(Dependencies.WorkManager.hiltExtension)
 
-    implementation(Dependencies.RxJava.rxJava2)
     implementation(Dependencies.RxJava.rxAndroid)
-
+    implementation(Dependencies.RxJava.rxJava)
+    implementation(Dependencies.RxJava.rxJava2)
+    implementation(Dependencies.RxJava.rxJava3)
+    implementation(Dependencies.RxJava.rxBinding)
+    implementation(Dependencies.RxJava.rxKotlin)
+    implementation(Dependencies.RxJava.rxDogTag)
+    implementation ("io.reactivex.rxjava2:rxandroid:2.0.1")
 
     implementation(Dependencies.UI.constraintLayout)
     implementation(Dependencies.UI.material)
@@ -76,5 +81,8 @@ dependencies {
     implementation(Dependencies.Lifecycle.liveData)
     implementation(Dependencies.Lifecycle.runTime)
 
+    implementation ("org.koin:koin-androidx-viewmodel:${Versions.koinVersion}")
+
     implementation ("com.dinuscxj:circleprogressbar:1.3.6")
+    implementation("androidx.preference:preference-ktx:1.2.0")
 }

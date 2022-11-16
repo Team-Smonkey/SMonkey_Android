@@ -3,11 +3,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
+        jcenter()
     }
 }
 rootProject.name = "Smonkey_Android"
 include (":ui")
 include (":data")
-include (":domain")
-include (":di")
