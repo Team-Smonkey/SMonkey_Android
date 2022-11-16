@@ -5,6 +5,7 @@ import com.example.data.domain.token.ACCESS_TOKEN
 import com.example.data.remote.api.CommunityApi
 import com.example.data.remote.datasource.declaration.RemoteCommunityDataSource
 import com.example.data.remote.request.community.CreateCommunityRequest
+import com.example.data.remote.request.community.UpdateCommunityParam
 import com.example.data.remote.request.community.UpdateCommunityRequest
 import com.example.data.remote.response.community.FetchCommunityDetailResponse
 import com.example.data.remote.response.community.FetchCommunityResponse
@@ -24,13 +25,18 @@ class RemoteCommunityDataSourceImpl(
             id
         )
 
-    override fun updateCommunity(updateCommunityRequest: UpdateCommunityRequest): Single<Completable> =
+    override fun updateCommunity(updateCommunityParam: UpdateCommunityParam): Single<Completable> =
         communityApi.updateCommunity(
             accessToken = ACCESS_TOKEN,
-            updateCommunityRequest
+            feedId = updateCommunityParam.feed_id,
+            UpdateCommunityRequest(
+                updateCommunityParam.title,
+                updateCommunityParam.content,
+                updateCommunityParam.category
+            )
         )
 
-    override fun fetchCommunity(category: CategoryType): Single<FetchCommunityResponse> =
+    override fun fetchCommunity(category: CategoryType): Single<List<FetchCommunityResponse>> =
         communityApi.fetchCommunity(
             accessToken = ACCESS_TOKEN,
             category
