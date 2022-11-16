@@ -10,6 +10,7 @@ import com.example.smonkey_android.base.BaseActivity
 import com.example.smonkey_android.databinding.ActivityMonkeyColorBinding
 import com.example.smonkey_android.feature.MainActivity
 
+@Suppress("DEPRECATION")
 class MonkeyColorActivity : BaseActivity<ActivityMonkeyColorBinding>(
     R.layout.activity_monkey_color,
 ) {

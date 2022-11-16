@@ -15,6 +15,7 @@ import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 import java.util.UUID
 
 interface CommunityApi {
@@ -27,20 +28,21 @@ interface CommunityApi {
     @DELETE(SMonkeyUrl.Community)
     fun deleteCommunity(
         @Header("Authorization") accessToken: String,
-        @Body id: Int,
+        @Query("feed-id") id: Int,
     ): Single<Completable>
 
-    @PATCH(SMonkeyUrl.Community)
+    @PATCH(SMonkeyUrl.Communities.CommunityDetail)
     fun updateCommunity(
         @Header("Authorization") accessToken: String,
+        @Path("feed-id") feedId: Int,
         @Body updateCommunityRequest: UpdateCommunityRequest,
     ): Single<Completable>
 
     @GET(SMonkeyUrl.Community)
     fun fetchCommunity(
         @Header("Authorization") accessToken: String,
-        @Body category: CategoryType,
-    ): Single<FetchCommunityResponse>
+        @Query("category") category: CategoryType,
+    ): Single<List<FetchCommunityResponse>>
 
     @GET(SMonkeyUrl.Communities.CommunityDetail)
     fun fetchCommunityDetail(

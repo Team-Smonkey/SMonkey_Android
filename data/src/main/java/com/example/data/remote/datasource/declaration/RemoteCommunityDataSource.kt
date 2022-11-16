@@ -2,6 +2,7 @@ package com.example.data.remote.datasource.declaration
 
 import com.example.data.domain.enums.CategoryType
 import com.example.data.remote.request.community.CreateCommunityRequest
+import com.example.data.remote.request.community.UpdateCommunityParam
 import com.example.data.remote.request.community.UpdateCommunityRequest
 import com.example.data.remote.response.community.FetchCommunityDetailResponse
 import com.example.data.remote.response.community.FetchCommunityResponse
@@ -15,9 +16,9 @@ interface RemoteCommunityDataSource {
 
     fun deleteCommunity(id: Int): Single<Completable>
 
-    fun updateCommunity(updateCommunityRequest: UpdateCommunityRequest): Single<Completable>
+    fun updateCommunity(updateCommunityRequest: UpdateCommunityParam): Single<Completable>
 
-    fun fetchCommunity(category: CategoryType): Single<FetchCommunityResponse>
+    fun fetchCommunity(category: CategoryType): Single<List<FetchCommunityResponse>>
 
     fun fetchCommunityDetail(feedId: UUID): Single<FetchCommunityDetailResponse>
 

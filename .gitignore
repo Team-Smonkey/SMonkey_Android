@@ -199,3 +199,5 @@ buildSrc/build/pluginUnderTestMetadata/plugin-under-test-metadata.properties
 .idea/gradle.xml
 
 .idea/misc.xml
+
+.idea/deploymentTargetDropDown.xml

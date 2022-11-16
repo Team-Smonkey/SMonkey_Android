@@ -64,9 +64,5 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(
             val intent = Intent(activity, ChangePwActivity::class.java)
             startActivity(intent)
         }
-
-        binding.logout.setOnClickListener {
-            TODO("LogOut")
-        }
     }
 }

@@ -2,10 +2,13 @@ package com.example.smonkey_android.feature.health
 
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
+import android.content.Intent
 import android.os.Bundle
 import com.example.smonkey_android.R
 import com.example.smonkey_android.base.BaseActivity
 import com.example.smonkey_android.databinding.ActivityHealthBinding
+import com.example.smonkey_android.feature.MainActivity
+import com.example.smonkey_android.feature.home.HomeActivity
 import java.util.Calendar
 
 class HealthActivity : BaseActivity<ActivityHealthBinding>(
@@ -52,6 +55,12 @@ class HealthActivity : BaseActivity<ActivityHealthBinding>(
                 mDateSetListener, nYear, nMon, nDay
             )
             oDialog.show()
+        }
+
+        binding.btComplete.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            finishAffinity()
+            startActivity(intent)
         }
     }
 }
