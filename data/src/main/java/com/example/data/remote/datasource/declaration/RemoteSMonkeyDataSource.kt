@@ -11,5 +11,5 @@ interface RemoteSMonkeyDataSource {
 
     fun alterSMonkeyColor(color: String): Single<Completable>
 
-    fun searchSMonkey(accessToken: String): Single<SearchSMonkeyResponse>
+    fun searchSMonkey(): Single<SearchSMonkeyResponse>
 }
