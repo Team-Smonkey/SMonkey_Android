@@ -17,43 +17,7 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
 ) {
     private val vm: CommunityViewModel by viewModel()
 
-    private var rvCommunityData = arrayListOf<CommunityData>()
-
-    override fun initView() {
-
-        setAdapter()
-
-        setFrag(0)
-
-        binding.btAll.setOnClickListener {
-            setFrag(0)
-        }
-
-        binding.btInformation.setOnClickListener {
-            setFrag(1)
-        }
-
-        binding.btThink.setOnClickListener {
-            setFrag(2)
-        }
-
-        binding.btQuestion.setOnClickListener {
-            setFrag(3)
-        }
-        binding.btMind.setOnClickListener {
-            setFrag(4)
-        }
-    }
-
-    private fun setAdapter() {
-        val mAdapter = CommunityAdapter(rvCommunityData)
-
-        binding.rv.run {
-            layoutManager = LinearLayoutManager(context)
-            setHasFixedSize(true)
-            adapter = mAdapter
-        }
-    }
+    private var rvCommunityData = ArrayList<CommunityData.Content.FeedList>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,10 +32,51 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    override fun initView() {
+
+        setAdapter()
+
+        setFrag(0)
+
+        binding.btAll.setOnClickListener {
+            setFrag(0)
+            vm.fetchCommunity(CategoryType.ALL)
+        }
+
+        binding.btInformation.setOnClickListener {
+            setFrag(1)
+            vm.fetchCommunity(CategoryType.TIP)
+        }
+
+        binding.btThink.setOnClickListener {
+            setFrag(2)
+            vm.fetchCommunity(CategoryType.WORRY)
+        }
+
+        binding.btQuestion.setOnClickListener {
+            setFrag(3)
+            vm.fetchCommunity(CategoryType.QUESTION)
+        }
+        binding.btMind.setOnClickListener {
+            setFrag(4)
+            vm.fetchCommunity(CategoryType.RESOLUTION)
+        }
+    }
+
+    private fun setAdapter() {
+        val mAdapter = CommunityAdapter(rvCommunityData)
+
+        binding.rv.run {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = mAdapter
+        }
+    }
+
     private fun handleEvent(event: CommunityViewModel.Event) =
         when(event) {
             is CommunityViewModel.Event.FetchCommunity -> {
-                setCommunity(event.fetchCommunityListResponse.map { it.toRv() })
+                setCommunity(event.fetchCommunityListResponse.content.feedList.map { it.toRv() })
             }
 
             is CommunityViewModel.Event.ErrorMessage -> {
@@ -88,7 +93,6 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
                 binding.thinkview.visibility = View.INVISIBLE
                 binding.mindview.visibility = View.INVISIBLE
 
-                vm.fetchCommunity(CategoryType.ALL)
             }
             1 -> {
                 binding.allview.visibility = View.INVISIBLE
@@ -97,7 +101,6 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
                 binding.thinkview.visibility = View.INVISIBLE
                 binding.mindview.visibility = View.INVISIBLE
 
-                vm.fetchCommunity(CategoryType.TIP)
             }
             2 -> {
                 binding.allview.visibility = View.INVISIBLE
@@ -106,7 +109,6 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
                 binding.thinkview.visibility = View.VISIBLE
                 binding.mindview.visibility = View.INVISIBLE
 
-                vm.fetchCommunity(CategoryType.WORRY)
             }
             3 -> {
                 binding.allview.visibility = View.INVISIBLE
@@ -115,7 +117,6 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
                 binding.thinkview.visibility = View.INVISIBLE
                 binding.mindview.visibility = View.INVISIBLE
 
-                vm.fetchCommunity(CategoryType.QUESTION)
             }
             4 -> {
                 binding.allview.visibility = View.INVISIBLE
@@ -123,13 +124,11 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
                 binding.questionview.visibility = View.INVISIBLE
                 binding.thinkview.visibility = View.INVISIBLE
                 binding.mindview.visibility = View.VISIBLE
-
-                vm.fetchCommunity(CategoryType.RESOLUTION)
             }
         }
     }
 
-    private fun setCommunity(data: List<CommunityData>) {
+    private fun setCommunity(data: List<CommunityData.Content.FeedList>) {
         for (element in data) {
         rvCommunityData.add(element)
     }
