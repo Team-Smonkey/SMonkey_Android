@@ -36,7 +36,7 @@ class RemoteCommunityDataSourceImpl(
             )
         )
 
-    override fun fetchCommunity(category: CategoryType): Single<List<FetchCommunityResponse>> =
+    override fun fetchCommunity(category: CategoryType): Single<FetchCommunityResponse> =
         communityApi.fetchCommunity(
             accessToken = ACCESS_TOKEN,
             category

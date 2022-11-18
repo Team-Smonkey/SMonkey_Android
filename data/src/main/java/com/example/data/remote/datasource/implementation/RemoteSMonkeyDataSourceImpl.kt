@@ -21,6 +21,6 @@ class RemoteSMonkeyDataSourceImpl(
             color = color
         )
 
-    override fun searchSMonkey(accessToken: String): Single<SearchSMonkeyResponse> =
-        sMonkeyApi.searchSMonkey(accessToken)
+    override fun searchSMonkey(): Single<SearchSMonkeyResponse> =
+        sMonkeyApi.searchSMonkey(ACCESS_TOKEN)
 }
