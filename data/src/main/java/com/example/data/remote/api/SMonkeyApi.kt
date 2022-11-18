@@ -24,7 +24,7 @@ interface SMonkeyApi {
         @Body color: String,
     ): Single<Completable>
 
-    @GET(SMonkeyUrl.SMonkeies.searchSMonkey)
+    @GET(SMonkeyUrl.SMonkey)
     fun searchSMonkey(
         @Header("Authorization") accessToken: String,
     ): Single<SearchSMonkeyResponse>

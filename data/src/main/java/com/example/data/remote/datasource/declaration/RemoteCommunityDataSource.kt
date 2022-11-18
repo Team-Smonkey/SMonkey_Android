@@ -18,7 +18,7 @@ interface RemoteCommunityDataSource {
 
     fun updateCommunity(updateCommunityRequest: UpdateCommunityParam): Single<Completable>
 
-    fun fetchCommunity(category: CategoryType): Single<List<FetchCommunityResponse>>
+    fun fetchCommunity(category: CategoryType): Single<FetchCommunityResponse>
 
     fun fetchCommunityDetail(feedId: UUID): Single<FetchCommunityDetailResponse>
 
