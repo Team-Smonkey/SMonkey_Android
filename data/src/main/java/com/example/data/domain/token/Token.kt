@@ -17,6 +17,8 @@ interface Storage {
 
     fun fetchMasterYi(): Boolean
 
+    fun logout()
+
     fun saveToken(token: String)
 
     fun fetchToken(): String
@@ -32,6 +34,11 @@ class StorageImpl(
 
     override fun fetchMasterYi(): Boolean =
         sharedPreferences.getBoolean(master.toString(), false)
+
+    override fun logout() {
+        editPreference { it.putBoolean(master.toString(), false) }
+        editPreference { it.putString(Token, "") }
+    }
 
     override fun saveToken(token: String) {
         editPreference { it.putString(Token, token) }
