@@ -26,13 +26,13 @@ class CommunityViewModel(
 
     fun fetchCommunity(Category: CategoryType) {
         fetchCommunityUseCase.execute(
-            Category, object : DisposableSingleObserver<List<FetchCommunityResponse>>() {
-                override fun onSuccess(t: List<FetchCommunityResponse>) {
+            Category, object : DisposableSingleObserver<FetchCommunityResponse>() {
+                override fun onSuccess(t: FetchCommunityResponse) {
                     event(Event.FetchCommunity(t))
                 }
 
                 override fun onError(e: Throwable) {
-                    event(Event.ErrorMessage("게시물을 발생하던 도중 문제가 발생하였습니다."))
+                    event(Event.ErrorMessage("게시물을 불러오던 도중 문제가 발생하였습니다."))
                 }
             }, AndroidSchedulers.mainThread()
         )
@@ -46,6 +46,6 @@ class CommunityViewModel(
 
     sealed class Event {
         data class ErrorMessage(val message: String) : Event()
-        data class FetchCommunity(val fetchCommunityListResponse: List<FetchCommunityResponse>) : Event()
+        data class FetchCommunity(val fetchCommunityListResponse: FetchCommunityResponse) : Event()
     }
 }
