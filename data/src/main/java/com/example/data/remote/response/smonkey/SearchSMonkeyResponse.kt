@@ -3,7 +3,6 @@ package com.example.data.remote.response.smonkey
 import com.google.gson.annotations.SerializedName
 
 data class SearchSMonkeyResponse(
-    @SerializedName("status") val status: Int,
     @SerializedName("content") val content: Content,
 ) {
     data class Content(

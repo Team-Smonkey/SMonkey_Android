@@ -1,6 +1,7 @@
 package com.example.smonkey_android.feature.community
 
 import com.example.data.domain.enums.CategoryType
+import com.example.data.domain.enums.ColorType
 import com.example.data.remote.response.community.FetchCommunityResponse
 import com.google.gson.annotations.SerializedName
 
@@ -23,7 +24,7 @@ data class CommunityData(
             data class Writer(
                 val userName: String,
                 val sMonkeyName: String,
-                val backgroundColor: String,
+                val backgroundColor: ColorType,
                 val step: Int,
                 val point: Int,
                 val level: Int,
