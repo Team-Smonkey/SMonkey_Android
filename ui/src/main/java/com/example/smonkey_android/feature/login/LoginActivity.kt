@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.preference.PreferenceManager
+import com.example.data.domain.token.ACCESS_TOKEN
 import com.example.data.domain.token.Storage
 import com.example.data.domain.token.StorageImpl
 import com.example.smonkey_android.R
@@ -61,7 +62,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
                 val intent = Intent(this, PromiseActivity::class.java)
 
                 storage.saveMasterYi()
-                storage.saveToken("")
+                storage.saveToken(event.loginResponse.content.accessToken)
+                ACCESS_TOKEN = event.loginResponse.content.accessToken
                 startActivity(intent)
             }
         }
