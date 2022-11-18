@@ -2,18 +2,19 @@ package com.example.smonkey_android.feature.friend
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.data.domain.usecase.community.CreateCommunityUseCase
-import com.example.data.domain.usecase.community.DeleteCommunityUseCase
-import com.example.data.domain.usecase.community.FetchCommunityUseCase
-import com.example.data.domain.usecase.community.UpdateCommunityUseCae
 import com.example.data.domain.usecase.friend.AddFriendUseCase
 import com.example.data.domain.usecase.friend.FetchFriendListUseCase
 import com.example.data.domain.usecase.friend.ReceiveRequestUseCase
 import com.example.data.domain.usecase.friend.RefuseRequestUseCase
+import com.example.data.domain.usecase.friend.RequestListUseCase
 import com.example.data.domain.usecase.friend.SearchFriendUseCase
+import com.example.data.remote.response.friend.FriendListResponse
+import com.example.data.remote.response.friend.RequestListResponse
 import com.example.smonkey_android.feature.community.CommunityViewModel
 import com.example.smonkey_android.util.MutableEventFlow
 import com.example.smonkey_android.util.asEventFlow
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.observers.DisposableSingleObserver
 import kotlinx.coroutines.launch
 
 class FriendViewModel (
@@ -21,15 +22,56 @@ class FriendViewModel (
     private val fetchFriendListUseCase: FetchFriendListUseCase,
     private val receiveRequestUseCase: ReceiveRequestUseCase,
     private val refuseRequestUseCase: RefuseRequestUseCase,
-    private val searchFriendUseCase: SearchFriendUseCase
+    private val searchFriendUseCase: SearchFriendUseCase,
+    private val requestListUseCase: RequestListUseCase,
 ) : ViewModel() {
 
-    private val _eventFlow = MutableEventFlow<CommunityViewModel.Event>()
+    private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEventFlow()
 
-    private fun event(event: CommunityViewModel.Event) {
+    fun friendList() {
+        fetchFriendListUseCase.execute(
+            Unit, object : DisposableSingleObserver<FriendListResponse>() {
+                override fun onSuccess(t: FriendListResponse) {
+                    event(Event.FetchFriendList(t))
+                }
+
+                override fun onError(e: Throwable) {
+                    event(Event.ErrorMessage("시도 중 오류가 발생하였습니다."))
+                }
+            }, AndroidSchedulers.mainThread()
+        )
+    }
+
+    fun requestList() {
+        requestListUseCase.execute(
+            Unit, object : DisposableSingleObserver<RequestListResponse>() {
+                override fun onSuccess(t: RequestListResponse) {
+                    event(Event.FetchRequestList(t))
+                }
+
+                override fun onError(e: Throwable) {
+                    event(Event.ErrorMessage("시도 중 오류가 발생하였습니다."))
+                }
+            }, AndroidSchedulers.mainThread()
+        )
+    }
+
+    fun receive() {
+//        receiveRequestUseCase.execute(
+//            Unit, Unit
+//        )
+    }
+
+    private fun event(event: Event) {
         viewModelScope.launch {
             _eventFlow.emit(event)
         }
+    }
+
+    sealed class Event {
+        data class ErrorMessage(val message: String) : Event()
+        data class FetchFriendList(val friendListResponse: FriendListResponse) : Event()
+        data class FetchRequestList(val requestListResponse: RequestListResponse) : Event()
     }
 }
