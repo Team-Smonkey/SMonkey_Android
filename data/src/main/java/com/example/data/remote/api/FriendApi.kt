@@ -10,6 +10,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface FriendApi {
 
@@ -33,13 +34,13 @@ interface FriendApi {
     @POST(SMonkeyUrl.Friend.ReceiveFriendRequest)
     fun receiveFriend(
         @Header("Authorization") accessToken: String,
-        @Body sender_id: String,
+        @Query("friend-id") friend_id: String
     ): Single<Completable>
 
     @POST(SMonkeyUrl.Friend.RefuseFriendRequest)
     fun refuseFriend(
         @Header("Authorization") accessToken: String,
-        @Body sender_id: String,
+        @Query("friend-id") friend_id: String
     ): Single<Completable>
 
     @GET(SMonkeyUrl.Friend.RequestList)

@@ -38,11 +38,11 @@ interface CommunityApi {
         @Body updateCommunityRequest: UpdateCommunityRequest,
     ): Single<Completable>
 
-    @GET(SMonkeyUrl.Community)
+    @GET(SMonkeyUrl.Communities.CommunityList)
     fun fetchCommunity(
         @Header("Authorization") accessToken: String,
         @Query("category") category: CategoryType,
-    ): Single<List<FetchCommunityResponse>>
+    ): Single<FetchCommunityResponse>
 
     @GET(SMonkeyUrl.Communities.CommunityDetail)
     fun fetchCommunityDetail(
