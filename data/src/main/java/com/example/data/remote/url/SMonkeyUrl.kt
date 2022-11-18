@@ -6,7 +6,7 @@ object SMonkeyUrl {
     const val Community = "/feed"
     const val Friends = "/friend"
     const val User = "/user"
-    const val Login = "/user/signIn"
+    const val Login = "/user/signin"
 
     object SMonkeies {
         const val SMonkeyColor = "/smonkey/color"
@@ -15,6 +15,7 @@ object SMonkeyUrl {
 
     object Communities {
         const val CommunityDetail = "/feed/{feed-id}"
+        const val CommunityList = "/feed/list"
         const val CommunityLike = "${CommunityDetail}/like"
     }
 
