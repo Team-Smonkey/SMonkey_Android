@@ -1,6 +1,7 @@
 package com.example.data.remote.response.community
 
 import com.example.data.domain.enums.CategoryType
+import com.example.data.domain.enums.ColorType
 import com.google.gson.annotations.SerializedName
 
 data class FetchCommunityResponse(
@@ -17,12 +18,12 @@ data class FetchCommunityResponse(
             @SerializedName("is_like") val isLike: Boolean,
             @SerializedName("content") val content: String,
             @SerializedName("category") val categoryType: CategoryType,
-            @SerializedName("create_at") val createAt: String,
+            @SerializedName("created_at") val createAt: String,
         ) {
             data class Writer(
                 @SerializedName("user_name") val userName: String,
                 @SerializedName("smonkey_name") val sMonkeyName: String,
-                @SerializedName("background_color") val backgroundColor: String,
+                @SerializedName("background_color") val backgroundColor: ColorType,
                 @SerializedName("step") val step: Int,
                 @SerializedName("point") val point: Int,
                 @SerializedName("level") val level: Int,
