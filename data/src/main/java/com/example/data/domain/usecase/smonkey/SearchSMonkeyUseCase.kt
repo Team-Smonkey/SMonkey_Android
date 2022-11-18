@@ -9,7 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 class SearchSMonkeyUseCase(
     private val remoteSMonkeyDataSource: RemoteSMonkeyDataSource,
     disposable: CompositeDisposable
-) : UseCase<String, SearchSMonkeyResponse>(disposable) {
-    override fun buildUseCase(data: String): Single<SearchSMonkeyResponse> =
-        remoteSMonkeyDataSource.searchSMonkey(data)
+) : UseCase<Unit, SearchSMonkeyResponse>(disposable) {
+    override fun buildUseCase(data: Unit): Single<SearchSMonkeyResponse> =
+        remoteSMonkeyDataSource.searchSMonkey()
 }
