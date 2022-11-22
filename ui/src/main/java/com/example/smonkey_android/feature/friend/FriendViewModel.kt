@@ -13,6 +13,7 @@ import com.example.data.remote.response.friend.RequestListResponse
 import com.example.smonkey_android.feature.community.CommunityViewModel
 import com.example.smonkey_android.util.MutableEventFlow
 import com.example.smonkey_android.util.asEventFlow
+import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import kotlinx.coroutines.launch
@@ -37,7 +38,7 @@ class FriendViewModel (
                 }
 
                 override fun onError(e: Throwable) {
-                    event(Event.ErrorMessage("시도 중 오류가 발생하였습니다."))
+
                 }
             }, AndroidSchedulers.mainThread()
         )
@@ -57,10 +58,32 @@ class FriendViewModel (
         )
     }
 
-    fun receive() {
-//        receiveRequestUseCase.execute(
-//            Unit, Unit
-//        )
+    fun receive(friendId: Long) {
+        receiveRequestUseCase.execute(
+            friendId, object: DisposableSingleObserver<Completable>(){
+                override fun onSuccess(t: Completable) {
+                    event(Event.ReceiveRequest)
+                }
+
+                override fun onError(e: Throwable) {
+                    event(Event.ErrorMessage(""))
+                }
+            }, AndroidSchedulers.mainThread()
+        )
+    }
+
+    fun refuse(friendId: Long) {
+        refuseRequestUseCase.execute(
+            friendId, object: DisposableSingleObserver<Completable>(){
+                override fun onSuccess(t: Completable) {
+                    event(Event.RefuseRequest)
+                }
+
+                override fun onError(e: Throwable) {
+                    event(Event.ErrorMessage(""))
+                }
+            }, AndroidSchedulers.mainThread()
+        )
     }
 
     private fun event(event: Event) {
@@ -71,6 +94,8 @@ class FriendViewModel (
 
     sealed class Event {
         data class ErrorMessage(val message: String) : Event()
+        object ReceiveRequest : Event()
+        object RefuseRequest : Event()
         data class FetchFriendList(val friendListResponse: FriendListResponse) : Event()
         data class FetchRequestList(val requestListResponse: RequestListResponse) : Event()
     }
