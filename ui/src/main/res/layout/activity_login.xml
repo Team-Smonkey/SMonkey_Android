@@ -83,7 +83,7 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="5dp"
             android:hint="비밀번호를 입력하세요."
-
+            android:inputType="textPassword"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_password"/>
