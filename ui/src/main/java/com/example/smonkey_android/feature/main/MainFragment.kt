@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toDrawable
 import com.example.data.domain.usecase.smonkey.SearchSMonkeyUseCase
 import com.example.data.remote.response.LoginResponse
 import com.example.data.remote.response.smonkey.SearchSMonkeyResponse
@@ -61,5 +62,15 @@ class MainFragment : BaseFragment<FragmentHomeBinding>(
         binding.progress.max = searchSMonkeyResponse.content.nextPoint
         binding.a.text = searchSMonkeyResponse.content.point.toString() + "/" + searchSMonkeyResponse.content.nextPoint
         binding.tvMainTitle.text = searchSMonkeyResponse.content.userName
+
+        if (searchSMonkeyResponse.content.level < 3) {
+            binding.smonkey.setImageResource(R.drawable.sickmonkey)
+        } else if (searchSMonkeyResponse.content.level < 9) {
+            binding.smonkey.setImageResource(R.drawable.tiredsmonkey)
+        } else if (searchSMonkeyResponse.content.level < 18) {
+            binding.smonkey.setImageResource(R.drawable.yummymonkey)
+        } else if (searchSMonkeyResponse.content.level < 30) {
+            binding.smonkey.setImageResource(R.drawable.happysmonkey)
+        }
     }
 }
