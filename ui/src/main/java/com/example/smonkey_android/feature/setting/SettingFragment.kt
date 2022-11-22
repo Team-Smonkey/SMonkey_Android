@@ -1,6 +1,7 @@
 package com.example.smonkey_android.feature.setting
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.core.app.ActivityCompat
@@ -15,6 +16,7 @@ import com.example.smonkey_android.feature.MainActivity
 import com.example.smonkey_android.feature.editauth.ChangeIdActivity
 import com.example.smonkey_android.feature.editauth.ChangePwActivity
 import com.example.smonkey_android.feature.health.HealthActivity
+import com.example.smonkey_android.feature.home.HomeActivity
 import com.example.smonkey_android.feature.login.LoginActivity
 import com.example.smonkey_android.feature.monkeycolor.MonkeyColorActivity
 import com.example.smonkey_android.feature.mypage.MyPageActivity
@@ -22,6 +24,14 @@ import com.example.smonkey_android.feature.mypage.MyPageActivity
 class SettingFragment : BaseFragment<FragmentSettingBinding>(
     R.layout.fragment_setting
 ) {
+
+    lateinit var homeActivity: HomeActivity
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        homeActivity = context as HomeActivity
+    }
 
     override fun initView() {
 
@@ -76,11 +86,11 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>(
         }
 
         binding.logout.setOnClickListener {
-            val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences()
+            val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(homeActivity)
             val storage: Storage = StorageImpl(sharedPreferences)
             storage.logout()
-            val intent = Intent(Activity(), LoginActivity::class.java)
-            finishAffinity(Activity());
+            val intent = Intent(homeActivity, LoginActivity::class.java)
+            finishAffinity(homeActivity);
             startActivity(intent)
         }
     }
