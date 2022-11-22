@@ -12,7 +12,7 @@ import java.util.UUID
 class RefuseRequestUseCase(
     private val remoteFriendDataSource: RemoteFriendDataSource,
     disposable: CompositeDisposable
-) : UseCase<String, Completable>(disposable) {
-    override fun buildUseCase(data: String): Single<Completable> =
+) : UseCase<Long, Completable>(disposable) {
+    override fun buildUseCase(data: Long): Single<Completable> =
         remoteFriendDataSource.refuseFriend(data)
 }
