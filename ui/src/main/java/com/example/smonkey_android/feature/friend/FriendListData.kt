@@ -1,5 +1,6 @@
 package com.example.smonkey_android.feature.friend
 
+import com.example.data.domain.enums.ColorType
 import com.example.data.remote.response.friend.FriendListResponse
 import com.google.gson.annotations.SerializedName
 
@@ -11,7 +12,7 @@ data class FriendListData(
     )
 
     data class FriendList(
-        val friendId: Int,
+        val friendId: Long,
         val userName: String,
         val smonkeyName: String,
         val backgroundColor: String,
