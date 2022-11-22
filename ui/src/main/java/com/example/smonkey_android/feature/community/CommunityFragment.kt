@@ -39,27 +39,37 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(
         setFrag(0)
 
         binding.btAll.setOnClickListener {
+            rvCommunityData.clear()
             setFrag(0)
             vm.fetchCommunity(CategoryType.ALL)
+            setAdapter()
         }
 
         binding.btInformation.setOnClickListener {
+            rvCommunityData.clear()
             setFrag(1)
             vm.fetchCommunity(CategoryType.TIP)
+            setAdapter()
         }
 
         binding.btThink.setOnClickListener {
+            rvCommunityData.clear()
             setFrag(2)
             vm.fetchCommunity(CategoryType.WORRY)
+            setAdapter()
         }
 
         binding.btQuestion.setOnClickListener {
+            rvCommunityData.clear()
             setFrag(3)
             vm.fetchCommunity(CategoryType.QUESTION)
+            setAdapter()
         }
         binding.btMind.setOnClickListener {
+            rvCommunityData.clear()
             setFrag(4)
             vm.fetchCommunity(CategoryType.RESOLUTION)
+            setAdapter()
         }
     }
 
