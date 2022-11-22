@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="Community" tools:ignore="ExtraTranslation">
+        <item>
+            교통비
+        </item>
+        <item>
+            미용비
+        </item>
+        <item>
+            식비
+        </item>
+        <item>
+            의류비
+        </item>
+        <item>
+            통신비
+        </item>
+        <item>
+            기타
+        </item>
+    </string-array>
+</resources>
