@@ -39,12 +39,15 @@ class FriendFragment : BaseFragment<FragmentFriendBinding>(
         when(event) {
             is FriendViewModel.Event.FetchFriendList -> {
                 setFriend(event.friendListResponse.content.friendList.map { it.toRv() })
+                binding.rv.adapter?.notifyDataSetChanged()
             }
             is FriendViewModel.Event.FetchRequestList -> {
                 setRequest(event.requestListResponse.content.friendList.map { it.toRv() })
+                binding.rv.adapter?.notifyDataSetChanged()
             }
             is FriendViewModel.Event.ErrorMessage -> {
                 showShortToast(event.message)
+                binding.rv.adapter?.notifyDataSetChanged()
             }
         }
     }
@@ -82,7 +85,7 @@ class FriendFragment : BaseFragment<FragmentFriendBinding>(
     }
 
     private fun setAdapter2() {
-        val mAdapter = RequestAdapter(rvRequestData)
+        val mAdapter = RequestAdapter(rvRequestData, vm)
 
         binding.rv.run {
             layoutManager = LinearLayoutManager(context)
