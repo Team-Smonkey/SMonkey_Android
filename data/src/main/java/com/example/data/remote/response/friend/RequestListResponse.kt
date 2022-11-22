@@ -10,7 +10,7 @@ data class RequestListResponse(
     )
 
     data class FriendList(
-        @SerializedName("friend_id") val friendId: Int,
+        @SerializedName("friend_id") val friendId: Long,
         @SerializedName("user_name") val userName: String,
         @SerializedName("smonkey_name") val smonkeyName: String,
         @SerializedName("background_color") val backgroundColor: String,

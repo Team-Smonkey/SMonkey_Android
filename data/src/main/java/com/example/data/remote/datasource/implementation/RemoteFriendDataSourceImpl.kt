@@ -12,7 +12,7 @@ class RemoteFriendDataSourceImpl(
     private val friendApi: FriendApi
 ): RemoteFriendDataSource {
 
-    override fun addFriend(friend_id: String): Single<Completable> =
+    override fun addFriend(friend_id: Long): Single<Completable> =
         friendApi.addFriend(
             accessToken = ACCESS_TOKEN,
             friend_id = friend_id
@@ -24,10 +24,10 @@ class RemoteFriendDataSourceImpl(
     override fun searchFriend(name: String): Single<Completable> =
         friendApi.searchFriend(accessToken = ACCESS_TOKEN, name)
 
-    override fun receiveFriend(sender_id: String): Single<Completable> =
+    override fun receiveFriend(sender_id: Long): Single<Completable> =
         friendApi.receiveFriend(accessToken = ACCESS_TOKEN, sender_id)
 
-    override fun refuseFriend(sender_id: String): Single<Completable> =
+    override fun refuseFriend(sender_id: Long): Single<Completable> =
         friendApi.refuseFriend(accessToken = ACCESS_TOKEN, sender_id)
 
     override fun requestList(): Single<RequestListResponse> =

@@ -17,7 +17,7 @@ interface FriendApi {
     @POST(SMonkeyUrl.Friend.PathFriend)
     fun addFriend(
         @Header("Authorization") accessToken: String,
-        @Path("friend-id") friend_id: String,
+        @Path("friend-id") friend_id: Long,
     ): Single<Completable>
 
     @GET(SMonkeyUrl.Friends)
@@ -34,13 +34,13 @@ interface FriendApi {
     @POST(SMonkeyUrl.Friend.ReceiveFriendRequest)
     fun receiveFriend(
         @Header("Authorization") accessToken: String,
-        @Query("friend-id") friend_id: String
+        @Query("friend-id") friend_id: Long
     ): Single<Completable>
 
     @POST(SMonkeyUrl.Friend.RefuseFriendRequest)
     fun refuseFriend(
         @Header("Authorization") accessToken: String,
-        @Query("friend-id") friend_id: String
+        @Query("friend-id") friend_id: Long
     ): Single<Completable>
 
     @GET(SMonkeyUrl.Friend.RequestList)

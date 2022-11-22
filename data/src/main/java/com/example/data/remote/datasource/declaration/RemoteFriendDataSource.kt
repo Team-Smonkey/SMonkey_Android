@@ -7,15 +7,15 @@ import io.reactivex.Single
 
 interface RemoteFriendDataSource {
 
-    fun addFriend(friend_id: String): Single<Completable>
+    fun addFriend(friend_id: Long): Single<Completable>
 
     fun fetchFriendList(): Single<FriendListResponse>
 
     fun searchFriend(name: String): Single<Completable>
 
-    fun receiveFriend(sender_id: String): Single<Completable>
+    fun receiveFriend(sender_id: Long): Single<Completable>
 
-    fun refuseFriend(sender_id: String): Single<Completable>
+    fun refuseFriend(sender_id: Long): Single<Completable>
 
     fun requestList(): Single<RequestListResponse>
 }
