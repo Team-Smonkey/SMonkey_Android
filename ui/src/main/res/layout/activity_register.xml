@@ -116,6 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="28dp"
+            android:inputType="textPassword"
             app:layout_constraintTop_toBottomOf="@id/tv_check_password"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
