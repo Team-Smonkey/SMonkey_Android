@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.smonkey_android.feature.friend.FriendViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +56,7 @@
             app:layout_constraintBottom_toTopOf="@id/vew"/>
 
         <Button
-            android:id="@+id/bt"
+            android:id="@+id/bt_receive"
             android:layout_width="110dp"
             android:layout_height="30dp"
             android:layout_marginLeft="16dp"
@@ -62,7 +69,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <Button
-            android:id="@+id/cancel"
+            android:id="@+id/bt_cancel"
             android:layout_width="110dp"
             android:layout_height="30dp"
             android:layout_marginLeft="16dp"
@@ -71,7 +78,7 @@
             android:text="삭제"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/vew"
-            app:layout_constraintLeft_toRightOf="@id/bt"
+            app:layout_constraintLeft_toRightOf="@id/bt_receive"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
