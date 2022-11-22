@@ -126,7 +126,7 @@
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            android:src="@drawable/monkey"/>
+                            android:src="@drawable/yummymonkey"/>
 
                         <TextView
                             android:id="@+id/tvNonSmokingLevel"
